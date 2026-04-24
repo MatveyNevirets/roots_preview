@@ -193,7 +193,6 @@ class CompiledApp {
       _745: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._745(f,arguments.length,x0) }),
       _746: (x0,x1) => x0.requestAnimationFrame(x1),
       _751: (x0,x1) => x0.warn(x1),
-      _753: (x0,x1) => x0.debug(x1),
       _754: x0 => globalThis.parseFloat(x0),
       _755: () => globalThis.window,
       _756: () => globalThis.Intl,
@@ -227,7 +226,6 @@ class CompiledApp {
       _812: x0 => x0.parentElement,
       _814: (x0,x1) => { x0.textContent = x1 },
       _815: x0 => x0.parentNode,
-      _816: x0 => x0.nextSibling,
       _817: (x0,x1) => x0.removeChild(x1),
       _818: x0 => x0.isConnected,
       _826: x0 => x0.clientHeight,
@@ -423,15 +421,6 @@ class CompiledApp {
       _1281: x0 => x0.selectedTrack,
       _1282: x0 => x0.repetitionCount,
       _1283: x0 => x0.frameCount,
-      _1331: (x0,x1) => x0.createElement(x1),
-      _1337: (x0,x1,x2) => x0.addEventListener(x1,x2),
-      _1338: x0 => x0.decode(),
-      _1339: (x0,x1,x2,x3) => x0.open(x1,x2,x3),
-      _1340: (x0,x1,x2) => x0.setRequestHeader(x1,x2),
-      _1341: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._1341(f,arguments.length,x0) }),
-      _1342: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._1342(f,arguments.length,x0) }),
-      _1343: x0 => x0.send(),
-      _1344: () => new XMLHttpRequest(),
       _1345: Date.now,
       _1347: s => new Date(s * 1000).getTimezoneOffset() * 60,
       _1348: s => {
@@ -452,13 +441,6 @@ class CompiledApp {
       _1350: () => typeof dartUseDateNowForTicks !== "undefined",
       _1351: () => 1000 * performance.now(),
       _1352: () => Date.now(),
-      _1353: () => {
-        // On browsers return `globalThis.location.href`
-        if (globalThis.location != null) {
-          return globalThis.location.href;
-        }
-        return null;
-      },
       _1355: () => new WeakMap(),
       _1356: (map, o) => map.get(o),
       _1357: (map, o, v) => map.set(o, v),
@@ -728,17 +710,6 @@ class CompiledApp {
       _8573: x0 => x0.headers,
       _8574: x0 => x0.body,
       _12202: x0 => x0.name,
-      _12947: () => globalThis.document,
-      _12953: (x0,x1) => { x0.height = x1 },
-      _12955: (x0,x1) => { x0.width = x1 },
-      _12964: x0 => x0.style,
-      _12967: x0 => x0.src,
-      _12968: (x0,x1) => { x0.src = x1 },
-      _12969: x0 => x0.naturalWidth,
-      _12970: x0 => x0.naturalHeight,
-      _12986: x0 => x0.status,
-      _12987: (x0,x1) => { x0.responseType = x1 },
-      _12989: x0 => x0.response,
 
     };
 
