@@ -450,7 +450,6 @@ class CompiledApp {
       _1370: s => JSON.stringify(s),
       _1371: s => printToConsole(s),
       _1372: (o, p, r) => o.replaceAll(p, () => r),
-      _1373: (o, p, r) => o.replace(p, () => r),
       _1374: Function.prototype.call.bind(String.prototype.toLowerCase),
       _1375: s => s.toUpperCase(),
       _1376: s => s.trim(),
@@ -529,12 +528,8 @@ class CompiledApp {
       _1464: (ms, c) =>
       setTimeout(() => dartInstance.exports.$invokeCallback(c),ms),
       _1465: (handle) => clearTimeout(handle),
-      _1466: (ms, c) =>
-      setInterval(() => dartInstance.exports.$invokeCallback(c), ms),
-      _1467: (handle) => clearInterval(handle),
       _1468: (c) =>
       queueMicrotask(() => dartInstance.exports.$invokeCallback(c)),
-      _1469: () => Date.now(),
       _1470: (s, m) => {
         try {
           return new RegExp(s, m);
@@ -568,7 +563,6 @@ class CompiledApp {
             constructor, [null, ...args]);
         return new factoryFunction();
       },
-      _1495: (o, p) => p in o,
       _1496: (o, p) => o[p],
       _1497: (o, p, v) => o[p] = v,
       _1498: (o, m, a) => o[m].apply(o, a),
@@ -620,18 +614,6 @@ class CompiledApp {
           setValue(wasmArray, wasmArrayOffset + i, jsArray[jsArrayOffset + i]);
         }
       },
-      _1511: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
-        const getValue = dartInstance.exports.$wasmI16ArrayGet;
-        for (let i = 0; i < length; i++) {
-          jsArray[jsArrayOffset + i] = getValue(wasmArray, wasmArrayOffset + i);
-        }
-      },
-      _1512: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
-        const setValue = dartInstance.exports.$wasmI16ArraySet;
-        for (let i = 0; i < length; i++) {
-          setValue(wasmArray, wasmArrayOffset + i, jsArray[jsArrayOffset + i]);
-        }
-      },
       _1513: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmI32ArrayGet;
         for (let i = 0; i < length; i++) {
@@ -676,7 +658,6 @@ class CompiledApp {
         return s;
       },
       _1522: x0 => x0.index,
-      _1523: x0 => x0.groups,
       _1524: x0 => x0.flags,
       _1525: x0 => x0.multiline,
       _1526: x0 => x0.ignoreCase,
